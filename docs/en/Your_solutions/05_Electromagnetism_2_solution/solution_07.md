@@ -16,7 +16,7 @@ This document contains detailed analytical solutions for properties of the elect
 
 \### Problem Statement
 
-The human eye is most sensitive to light with a wavelength ($\\lambda$) of approximately \*\*550 nm\*\*. 
+The human eye is most sensitive to light with a wavelength ($\\lambda$) of approximately \*\*550 nm\*\*.
 
 1\. Determine the corresponding color in the visible spectrum.
 
@@ -154,5 +154,5 @@ When explaining this order, keep these three rules in mind:
 
 | \*\*Shortest EM Wave\*\* | Gamma Rays |
 
-| \*\*Longest EM Wave\*\* | Radio Waves |
+| \*\*Longest EM Wave\*\* | Radio Waves |.
 
