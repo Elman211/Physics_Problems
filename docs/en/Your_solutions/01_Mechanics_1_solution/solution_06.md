@@ -1,117 +1,55 @@
-# Problem 6: Variable Velocity
+# 6. Variable Velocity Analysis
 
-We are given the velocity function $v(t)=t^2+2t-5$ and the initial position $x(0)=4$.
+## Problem Statement
+An object's velocity is defined by the function:
+$$v(t) = t^2 + 2t - 5$$
 
-We want:
+**Initial Condition:** At $t = 0$, the position $x = 4$.
 
-1. The position at $t=3$, i.e. $x(3)$.
-2. The acceleration at $t=3$, i.e. $a(3)$.
-
----
-
-## 1) Position from velocity theory
-
-Velocity is the derivative of position:
-
-$$
-v(t)=\frac{dx}{dt}
-$$
-
-So:
-
-$$
-\frac{dx}{dt}=t^2+2t-5
-$$
-
-Integrate both sides with respect to $t$:
-
-$$
-x(t)=\int (t^2+2t-5)\,dt
-$$
-
-Compute the integral term-by-term:
-
-$$
-\int t^2\,dt=\frac{t^3}{3},\qquad
-\int 2t\,dt=t^2,\qquad
-\int (-5)\,dt=-5t
-$$
-
-So the general position function is:
-
-$$
-x(t)=\frac{t^3}{3}+t^2-5t+C
-$$
-
-Use the initial condition $x(0)=4$:
-
-$$
-x(0)=\frac{0^3}{3}+0^2-5\cdot 0 + C = C = 4
-$$
-
-Therefore:
-
-$$
-x(t)=\frac{t^3}{3}+t^2-5t+4
-$$
-
-Now evaluate at $t=3$:
-
-$$
-x(3)=\frac{3^3}{3}+3^2-5\cdot 3+4
-=\frac{27}{3}+9-15+4
-=9+9-15+4
-$$
-
-Compute:
-$$
-9+9=18,\qquad 18-15=3,\qquad 3+4=7
-$$
-
-So:
-
-$$
-x(3)=7
-$$
+**Goal:** Determine the object's **position** and **acceleration** at time $t = 3$.
 
 ---
 
-## 2) Acceleration from velocity
+## 1. Finding Acceleration at $t = 3$
+Acceleration $a(t)$ is the first derivative of velocity with respect to time:
+$$a(t) = \frac{dv}{dt}$$
 
-Acceleration is the derivative of velocity:
+### Step A: Differentiate $v(t)$
+$$a(t) = \frac{d}{dt}(t^2 + 2t - 5) = 2t + 2$$
 
-$$
-a(t)=\frac{dv}{dt}
-$$
-
-Differentiate:
-
-$$
-v(t)=t^2+2t-5
-\quad\Rightarrow\quad
-a(t)=2t+2
-$$
-
-Evaluate at $t=3$:
-
-$$
-a(3)=2\cdot 3 + 2 = 8
-$$
+### Step B: Evaluate at $t = 3$
+$$a(3) = 2(3) + 2 = 6 + 2 = \mathbf{8 \text{ units/s}^2}$$
 
 ---
 
-## Final answers
+## 2. Finding Position at $t = 3$
+Position $x(t)$ is the integral of velocity with respect to time:
+$$x(t) = \int v(t) \, dt$$
 
-$$
-x(3)=7
-$$
+### Step A: Find the general position function
+$$x(t) = \int (t^2 + 2t - 5) \, dt$$
+$$x(t) = \frac{1}{3}t^3 + t^2 - 5t + C$$
 
-$$
-a(3)=8
-$$
+### Step B: Solve for the constant $C$ using initial conditions
+We know $x(0) = 4$:
+$$4 = \frac{1}{3}(0)^3 + (0)^2 - 5(0) + C$$
+$$\mathbf{C = 4}$$
+
+So, the specific position function is:
+$$x(t) = \frac{1}{3}t^3 + t^2 - 5t + 4$$
+
+### Step C: Evaluate at $t = 3$
+$$x(3) = \frac{1}{3}(3)^3 + (3)^2 - 5(3) + 4$$
+$$x(3) = \frac{27}{3} + 9 - 15 + 4$$
+$$x(3) = 9 + 9 - 15 + 4 = \mathbf{7 \text{ units}}$$
 
 ---
 
-## Plot the velocity and acceleration
+## Summary of Results
+| Parameter at $t=3$ | Calculation | Result |
+| :--- | :--- | :--- |
+| **Acceleration** | $a(3) = 2(3) + 2$ | $8 \text{ units/s}^2$ |
+| **Position** | $x(3) = 9 + 9 - 15 + 4$ | $7 \text{ units}$ |
 
-![Velocity and Acceleration Plots](velocity_acceleration_plots.png)
+### Calculus Note:
+To move from velocity to acceleration, we **differentiate**. To move from velocity to position, we **integrate** and apply the initial constant of integration.
